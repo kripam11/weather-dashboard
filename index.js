@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static("public"));
 
 const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-const API_KEY = "84c9e58ea74f56dfbffb9c5594fa45f5";
+const API_KEY = process.env.OPENWEATHER_API_KEY;
 
 
 app.get("/",(req,res)=>{
