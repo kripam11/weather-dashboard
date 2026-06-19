@@ -17,9 +17,8 @@ app.get("/",(req,res)=>{
     res.render("index.ejs",{
         error: null,
         weather: null,
-        forecast: [],
         rainTomorrow: false,
-        air: null
+      
     });
 });
 
