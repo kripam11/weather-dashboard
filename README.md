@@ -63,23 +63,17 @@ Handles invalid city names and API errors gracefully.
 
 The main dashboard displaying real-time weather information and weather insights.
 
-![Dashboard]
-
 ---
 
 ### 📍 Current Location Weather
 
 Weather fetched automatically using the browser's Geolocation API and the user's current coordinates.
 
-![Current Location]
-
 ---
 
 ### 🔍 Search by City
 
 Search weather conditions for any city and instantly retrieve live weather data.
-
-![Search By City]
 
 
 ## 🚀 Installation
