@@ -1,14 +1,7 @@
 {
-  "version": 2,
   "functions": {
     "index.js": {
-      "includeFiles": ["views/**", "public/**"]
+      "includeFiles": "views/**"
     }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+  }
 }
