@@ -61,17 +61,17 @@ Handles invalid city names and API errors gracefully.
 
 ### 🏠 Dashboard
 
-The main dashboard displaying weather information and insights.
+The main dashboard displaying real-time weather information and weather insights.
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard]
 
 ---
 
 ### 📍 Current Location Weather
 
-Weather fetched automatically using the browser's Geolocation API and the user's coordinates.
+Weather fetched automatically using the browser's Geolocation API and the user's current coordinates.
 
-![Current Location](screenshots/geolocation.png)
+![Current Location]
 
 ---
 
@@ -79,9 +79,8 @@ Weather fetched automatically using the browser's Geolocation API and the user's
 
 Search weather conditions for any city and instantly retrieve live weather data.
 
-![Search By City](screenshots/searchByCity.png)
+![Search By City]
 
----
 
 ## 🚀 Installation
 
