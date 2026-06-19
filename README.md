@@ -1,97 +1,189 @@
 # 🌦️ WeatherSphere
 
-A modern weather intelligence dashboard built with Node.js, Express, EJS, and Axios that delivers real-time weather information through both city-based search and automatic location detection.
+A modern weather dashboard built with **Node.js**, **Express.js**, **EJS**, and **Axios** that provides real-time weather information through both **city-based search** and **automatic location detection**.
 
 ## ✨ Features
 
-* 🔍 Search weather conditions by city name
-* 📍 Get instant weather updates using your current location
-* 🌡️ Real-time temperature tracking
-* 🌤️ Weather condition monitoring
-* 🤒 Feels-like temperature
-* 💧 Humidity information
-* 🌬️ Wind speed metrics
-* 💡 Dynamic weather recommendations
-* ⚡ Fast API-powered data retrieval
-* 📱 Responsive and modern user interface
-* ❌ Graceful error handling for invalid locations
+### 🔍 Search Weather by City
+
+Enter any city name and instantly get live weather information.
+
+### 📍 Current Location Detection
+
+Uses the browser's Geolocation API to automatically fetch weather data based on the user's current location.
+
+### 🌡️ Real-Time Weather Data
+
+Get accurate weather information including:
+
+* Current Temperature
+* Feels Like Temperature
+* Humidity
+* Wind Speed
+* Current Weather Condition
+
+### 💡 Weather Suggestions
+
+Provides weather-based recommendations to help users plan their day.
+
+### 📱 Responsive User Interface
+
+Designed with a modern and responsive layout for desktop and mobile devices.
+
+### ⚠️ Error Handling
+
+Handles invalid city names and API errors gracefully.
+
+---
 
 ## 🛠️ Tech Stack
 
+### Frontend
+
 * HTML5
 * CSS3
-* JavaScript
+* EJS
+
+### Backend
+
 * Node.js
 * Express.js
-* EJS
+
+### APIs & Libraries
+
 * Axios
 * OpenWeatherMap API
+* Browser Geolocation API
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Dashboard
+
+The main dashboard displaying weather information and insights.
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+### 📍 Current Location Weather
+
+Weather fetched automatically using the browser's Geolocation API and the user's coordinates.
+
+![Current Location](screenshots/geolocation.png)
+
+---
+
+### 🔍 Search by City
+
+Search weather conditions for any city and instantly retrieve live weather data.
+
+![Search By City](screenshots/searchByCity.png)
+
+---
 
 ## 🚀 Installation
 
-Clone the repository:
+### Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd weatherForecast
+git clone https://github.com/kripam11/weather-dashboard.git
+cd weather-dashboard
 ```
 
-Install dependencies:
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-Create a `.env` file:
-
-```env
-API_KEY=YOUR_OPENWEATHER_API_KEY
-```
-
-Start the application:
+### Run the Application
 
 ```bash
-node index.js
+nodemon index.js
 ```
 
-Visit:
+Open your browser and visit:
 
 ```text
 http://localhost:3000
 ```
 
-## 📸 Screenshots
-
-Screenshots are available in the `screenshots` folder.
+---
 
 ## 📂 Project Structure
 
 ```text
-weatherForecast/
+weather-dashboard/
 │
 ├── public/
 │       └── style.css
 │
+├── screenshots/
+│   ├── dashboard.png
+│   ├── geolocation.png
+│   └── searchByCity.png
+│
 ├── views/
 │   └── index.ejs
-│
-├── screenshots/
 │
 ├── index.js
 ├── package.json
 └── README.md
 ```
 
-## 🔮 Future Enhancements
+---
+
+## 🌍 APIs Used
+
+### OpenWeatherMap API
+
+Used to retrieve:
+
+* Temperature
+* Feels Like Temperature
+* Humidity
+* Wind Speed
+* Weather Conditions
+
+### Browser Geolocation API
+
+Used to:
+
+* Access user coordinates
+* Fetch weather data based on current location
+
+---
+
+## 🎯 Learning Outcomes
+
+This project helped explore and implement:
+
+* REST API Integration
+* Async/Await
+* Express Routing
+* GET & POST Requests
+* Server-Side Rendering with EJS
+* Geolocation Services
+* Form Handling
+* Error Handling
+* Responsive UI Design
+
+---
+
+## 🔮 Future Improvements
 
 * 5-Day Weather Forecast
 * Air Quality Index (AQI)
-* Weather Maps Integration
-* Theme Switching
-* Weather History Analytics
+* Sunrise & Sunset Information
+* Weather Analytics Dashboard
+
+---
 
 ## 👨‍💻 Author
 
 **Kripa**
 
-Built as a backend learning project to explore API integration, server-side rendering, geolocation services, and Express.js application development.
+Built to explore backend development, API integration, geolocation services, and modern web application development using Node.js and Express.js.
+
