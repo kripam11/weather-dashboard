@@ -1,13 +1,19 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 const port = process.env.PORT || 3000;
 
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
 const API_URL = "https://api.openweathermap.org/data/2.5/weather";
 const API_KEY = process.env.OPENWEATHER_API_KEY;
@@ -102,6 +108,10 @@ app.post("/coordinates", async (req,res)=>{
 
 
 
-app.listen(port,()=>{
-    console.log(`server running at port ${port}`);
-})
+if (!process.env.VERCEL) {
+    app.listen(port, () => {
+        console.log(`server running at port ${port}`);
+    });
+}
+
+export default app;
