@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherSphere</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<nav>
+    <h2>🌦 WeatherSphere</h2>
+</nav>
+
+<section class="hero">
+
+    <h1>Weather Intelligence Dashboard</h1>
+
+    <p>
+        Real-time forecasts, air quality insights and rain prediction.
+    </p>
+
+    <form action="/" method="POST">
+
+        <input
+            type="text"
+            name="city"
+            placeholder="Enter city name..."
+            required>
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+    <button
+    type="button"
+    id="locationBtn"
+    class="location-btn">
+    📍 Use My Location
+</button>
+
+</section>
+
+<% if(error){ %>
+
+<div class="error">
+    <%= error %>
+</div>
+
+<% } %>
+
+<% if(weather){ %>
+
+<section class="top-grid">
+
+    <div class="card weather-card">
+
+        <h2>Current Weather</h2>
+
+        <h1>
+            <%= Math.round(weather.temp) %>°C
+        </h1>
+
+        <h3>
+            <%= weather.city %>
+        </h3>
+
+        <p>
+            <%= weather.condition %>
+        </p>
+
+        <div class="stats">
+
+            <div>
+                Humidity
+                <strong>
+                    <%= weather.humidity %>%
+                </strong>
+            </div>
+
+            <div>
+                Wind
+                <strong>
+                    <%= weather.wind %> km/h
+                </strong>
+            </div>
+
+            <div>
+                Feels Like
+                <strong>
+                    <%= Math.round(weather.feelsLike) %>°C
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Tomorrow's Prediction</h2>
+
+        <% if(rainTomorrow){ %>
+
+            <div class="rain-box rain">
+                🌧 Rain Expected Tomorrow
+            </div>
+
+        <% } else { %>
+
+            <div class="rain-box sunny">
+                ☀ No Rain Expected
+            </div>
+
+        <% } %>
+
+    </div>
+
+</section>
+
+
+
+<section>
+
+    <h2 class="heading">
+        Weather Suggestions
+    </h2>
+
+    <div class="card tips-card">
+
+        <ul>
+
+            <% if(rainTomorrow){ %>
+
+            <li>☂ Carry an umbrella tomorrow.</li>
+
+            <% } else { %>
+
+            <li>☀ Great weather for outdoor activities.</li>
+
+            <% } %>
+
+            <li>💧 Stay hydrated during hot weather.</li>
+
+            <li>🌬 Check wind conditions before travel.</li>
+
+            <li>🧴 Use sunscreen if UV exposure is high.</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<% } %>
+<form
+    id="locationForm"
+    action="/coordinates"
+    method="POST"
+    style="display:none;">
+
+    <input type="hidden" name="lat" id="lat">
+    <input type="hidden" name="lon" id="lon">
+
+</form>
+
+
+<script>
+
+document.getElementById("locationBtn")
+.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    console.log("Button clicked");
+
+    navigator.geolocation.getCurrentPosition(
+
+        (position) => {
+
+            document.getElementById("lat").value =
+                position.coords.latitude;
+
+            document.getElementById("lon").value =
+                position.coords.longitude;
+
+            console.log("Submitting hidden form");
+
+            document.getElementById("locationForm").submit();
+
+        },
+
+        (error) => {
+            console.log(error);
+        }
+
+    );
+
+});
+
+</script>
+
+</body>
+
+
+
+</html>
